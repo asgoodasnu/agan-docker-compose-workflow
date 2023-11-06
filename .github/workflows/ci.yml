@@ -36,10 +36,6 @@ jobs:
         id: npm-lint
         run: npm run lint
 
-      - name: Test
-        id: npm-ci-test
-        run: npm run ci-test
-
   test-action:
     name: GitHub Actions Test
     runs-on: ubuntu-latest
@@ -49,12 +45,22 @@ jobs:
         id: checkout
         uses: actions/checkout@v4
 
-      - name: Test Local Action
+      - name: Test default Action
         id: test-action
         uses: ./
         with:
-          milliseconds: 1000
+          docker-file: './docker/docker-compose.yml'
 
-      - name: Print Output
-        id: output
-        run: echo "${{ steps.test-action.outputs.time }}"
+      - name: Test one service Action
+        id: test-action
+        uses: ./
+        with:
+          docker-file: './docker/docker-compose.yml'
+          services: 'helloworld'
+
+      - name: Test profile Action
+        id: test-action
+        uses: ./
+        with:
+          docker-file: './docker/docker-compose.yml'
+          compose-options: '--profile profile-1'

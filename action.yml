@@ -1,19 +1,29 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Docker Compose Action'
+description: 'Use docker compose in steps and remove after action finished'
+author: 'asgoodasnew'
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  compose-file:
+    description: 'Add one or more compose files with relative path'
     required: true
-    default: '1000'
-
-# Define your outputs here.
-outputs:
-  time:
-    description: 'Your output description here'
+    default: './docker-compose.yml'
+  services:
+    description: 'Optional services we should start'
+    required: false
+  compose-options:
+    description: 'Optional compose options (see https://docs.docker.com/compose/reference/#command-options-overview-and-help)'
+    required: false
+  compose-up-options:
+    description: 'Optional compose up command options (see https://docs.docker.com/engine/reference/commandline/compose_up/)'
+    required: false
+    default: '-d'
+  compose-down-options:
+    description: 'Optional compose down command options (see https://docs.docker.com/engine/reference/commandline/compose_up/)'
+    required: false
+    default: '--volumes'
 
 runs:
   using: node20
-  main: dist/index.js
+  main: dist/main/index.js
+  post: dist/post/index.js
