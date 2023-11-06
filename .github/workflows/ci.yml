@@ -49,18 +49,18 @@ jobs:
         id: test-default
         uses: ./
         with:
-          docker-file: './docker/docker-compose.yml'
+          compose-file: './docker/docker-compose.yml'
 
       - name: Test one service Action
         id: test-one-service
         uses: ./
         with:
-          docker-file: './docker/docker-compose.yml'
+          compose-file: './docker/docker-compose.yml'
           services: 'helloworld'
 
       - name: Test profile Action
         id: test-profile
         uses: ./
         with:
-          docker-file: './docker/docker-compose.yml'
+          compose-file: './docker/docker-compose.yml'
           compose-options: '--profile profile-1'
