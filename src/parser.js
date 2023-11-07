@@ -84,7 +84,7 @@ function parseComposeOptions() {
  */
 function parseOptions(options) {
   if (null !== options && typeof options === 'string' && 0 < options.length) {
-    return options.split(' ')
+    return options.split(' ').map(option => option.replace('/\r|\n/g', ''))
   }
 
   return []

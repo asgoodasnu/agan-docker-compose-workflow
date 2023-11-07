@@ -11,7 +11,7 @@ export class Compose {
     if (0 < services.length) {
       return composeV2.upMany(services, options.toObject())
     }
-
+    console.debug(options)
     return composeV2.upAll(options)
   }
 
