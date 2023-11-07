@@ -31,7 +31,7 @@ async function stop() {
   const files = resolver.resolveComposeFiles()
   const command = resolver.resolveComposeDownFlags()
   const compose = resolver.resolveComposeCommandFlags()
-
+  console.debug(command, compose)
   const options = new DockerComposeOptions(files, true, compose, command)
 
   try {
