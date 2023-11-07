@@ -31255,6 +31255,8 @@ function parseComposeUpOptions() {
     start = parseOptions(core.getInput('compose-up-options')).filter(option => {
       return ALLOWED_UP.includes(option)
     })
+
+    start.push('--detach')
   }
 
   return start
@@ -31270,6 +31272,8 @@ function parseComposeDownOptions() {
         return ALLOWED_DOWN.includes(option)
       }
     )
+
+    stop.push('--volumes')
   }
 
   return stop

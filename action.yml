@@ -1,5 +1,5 @@
 name: 'Docker Compose Action'
-description: 'Use docker compose in steps and remove after action finished'
+description: 'Use docker compose in steps and remove after action finished (started always in detached mode)'
 author: 'asgoodasnew'
 
 # Define your inputs here.
@@ -17,9 +17,8 @@ inputs:
   compose-up-options:
     description: 'Optional compose up command options (see https://docs.docker.com/engine/reference/commandline/compose_up/)'
     required: false
-    default: '-d'
   compose-down-options:
-    description: 'Optional compose down command options (see https://docs.docker.com/engine/reference/commandline/compose_up/)'
+    description: 'Optional compose down command options (see https://docs.docker.com/engine/reference/commandline/compose_down/)'
     required: false
     default: '--volumes'
 
