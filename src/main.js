@@ -1,4 +1,5 @@
 const core = require('@actions/core')
+const github = require('@actions/github')
 const { OptionResolver } = require('./option_resolver')
 const { DockerComposeOptions } = require('./DockerComposeOptions')
 const { Compose } = require('./compose')

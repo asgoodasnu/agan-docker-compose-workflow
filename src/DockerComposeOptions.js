@@ -1,3 +1,5 @@
+import path from 'path'
+
 export class DockerComposeOptions {
   constructor(composeFiles, log, composeOptions, commandOptions) {
     this.composeFiles = composeFiles
@@ -8,6 +10,7 @@ export class DockerComposeOptions {
 
   toObject() {
     return {
+      cwd: path.join(process.cwd()),
       config: this.composeFiles,
       log: this.log,
       composeOptions: this.composeOptions,
