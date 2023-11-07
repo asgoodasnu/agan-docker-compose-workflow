@@ -26831,7 +26831,7 @@ class Compose {
     if (0 < services.length) {
       return composeV2.upMany(services, options.toObject())
     }
-
+    console.debug(options)
     return composeV2.upAll(options)
   }
 
@@ -27055,7 +27055,7 @@ function parseComposeOptions() {
  */
 function parseOptions(options) {
   if (null !== options && typeof options === 'string' && 0 < options.length) {
-    return options.split(' ')
+    return options.split(' ').map(option => option.replace('/\r|\n/g', ''))
   }
 
   return []
