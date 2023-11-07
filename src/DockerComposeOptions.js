@@ -10,7 +10,6 @@ export class DockerComposeOptions {
 
   toObject() {
     return {
-      cwd: path.join(process.cwd()),
       config: this.composeFiles,
       log: this.log,
       composeOptions: this.composeOptions,

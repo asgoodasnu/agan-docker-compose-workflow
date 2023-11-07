@@ -1,3 +1,5 @@
+import path from 'path'
+
 const core = require('@actions/core')
 const parser = require('./parser')
 
@@ -27,6 +29,6 @@ export class OptionResolver {
       throw new Error('You must specify minimum one compose-file')
     }
 
-    return files
+    return files.map(file => path.join(process.cwd(), file))
   }
 }

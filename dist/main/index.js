@@ -31026,7 +31026,6 @@ class DockerComposeOptions {
 
   toObject() {
     return {
-      cwd: path__WEBPACK_IMPORTED_MODULE_0___default().join(process.cwd()),
       config: this.composeFiles,
       log: this.log,
       composeOptions: this.composeOptions,
@@ -31159,6 +31158,10 @@ __nccwpck_require__.r(__webpack_exports__);
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
 /* harmony export */   "OptionResolver": () => (/* binding */ OptionResolver)
 /* harmony export */ });
+/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(1017);
+/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nccwpck_require__.n(path__WEBPACK_IMPORTED_MODULE_0__);
+
+
 const core = __nccwpck_require__(2186)
 const parser = __nccwpck_require__(1809)
 
@@ -31188,7 +31191,7 @@ class OptionResolver {
       throw new Error('You must specify minimum one compose-file')
     }
 
-    return files
+    return files.map(file => path__WEBPACK_IMPORTED_MODULE_0___default().join(process.cwd(), file))
   }
 }
 
