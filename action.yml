@@ -1,6 +1,6 @@
-name: 'Docker Compose Action'
+name: 'AGAN Custom Docker Compose Action'
 description: 'Use docker compose in steps and remove after action finished (started always in detached mode)'
-author: 'asgoodasnew'
+author: 'Kurt Junker <kurt.junker@asgoodasnew.com>'
 
 # Define your inputs here.
 inputs:
