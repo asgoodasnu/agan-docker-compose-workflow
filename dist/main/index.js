@@ -31059,7 +31059,7 @@ class Compose {
       return composeV2.upMany(services, options.toObject())
     }
     console.debug(options.toObject())
-    return composeV2.upAll(options)
+    return composeV2.upAll(options.toObject())
   }
 
   /**
