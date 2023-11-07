@@ -31112,7 +31112,7 @@ async function stop() {
   const files = resolver.resolveComposeFiles()
   const command = resolver.resolveComposeDownFlags()
   const compose = resolver.resolveComposeCommandFlags()
-  console.debug(command, compose)
+
   const options = new DockerComposeOptions(files, true, compose, command)
 
   try {
@@ -31229,6 +31229,11 @@ let start = []
 let stop = []
 
 /**
+ * @type {string[]}
+ */
+let command = []
+
+/**
  * @param {array<string>} composeFiles
  * @returns {array<string>}
  */
@@ -31274,13 +31279,13 @@ function parseComposeDownOptions() {
  * @returns {string[]}
  */
 function parseComposeOptions() {
-  if (0 === stop.length) {
-    stop = parseOptions(core.getInput('compose-options')).filter(option => {
+  if (0 === command.length) {
+    command = parseOptions(core.getInput('compose-options')).filter(option => {
       return ALLOWED_DOWN.includes(option)
     })
   }
 
-  return stop
+  return command
 }
 
 /**

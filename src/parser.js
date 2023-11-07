@@ -24,6 +24,11 @@ let start = []
 let stop = []
 
 /**
+ * @type {string[]}
+ */
+let command = []
+
+/**
  * @param {array<string>} composeFiles
  * @returns {array<string>}
  */
@@ -69,13 +74,13 @@ function parseComposeDownOptions() {
  * @returns {string[]}
  */
 function parseComposeOptions() {
-  if (0 === stop.length) {
-    stop = parseOptions(core.getInput('compose-options')).filter(option => {
+  if (0 === command.length) {
+    command = parseOptions(core.getInput('compose-options')).filter(option => {
       return ALLOWED_DOWN.includes(option)
     })
   }
 
-  return stop
+  return command
 }
 
 /**
