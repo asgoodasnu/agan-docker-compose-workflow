@@ -13,8 +13,15 @@ const ALLOWED_UP = [
 
 const ALLOWED_DOWN = ['--volumes', '--remove-orphans', '--rmi']
 
-let start
-let stop
+/**
+ * @type {string[]}
+ */
+let start = []
+
+/**
+ * @type {string[]}
+ */
+let stop = []
 
 /**
  * @param {array<string>} composeFiles
