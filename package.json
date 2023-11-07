@@ -31,8 +31,8 @@
     "format:check": "prettier --check **/*.js",
     "lint": "npx eslint . -c ./.github/linters/.eslintrc.yml",
     "package": "npm run package:main && npm run package:post",
-    "package:main": "ncc build src/index.js -o ./dist/main/ -m",
-    "package:post": "ncc build src/post.js -o ./dist/post/ -m",
+    "package:main": "ncc build src/index.js -o ./dist/main/",
+    "package:post": "ncc build src/post.js -o ./dist/post/",
     "test": "(jest && make-coverage-badge --output-path ./badges/coverage.svg) || make-coverage-badge --output-path ./badges/coverage.svg",
     "all": "npm run format:write && npm run lint && npm run test && npm run package"
   },
