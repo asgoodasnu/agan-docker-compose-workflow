@@ -1,5 +1,5 @@
 const core = require('@actions/core')
-const parser = require('parser')
+const parser = require('./parser')
 
 export class OptionResolver {
   resolveComposeCommandFlags() {

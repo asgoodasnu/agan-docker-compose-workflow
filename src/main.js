@@ -1,7 +1,7 @@
 const core = require('@actions/core')
-const { OptionResolver } = require('option_resolver')
-const { Docker_compose_options } = require('src/docker_compose_options')
-const { Compose } = require('compose')
+const { OptionResolver } = require('./option_resolver')
+const { DockerComposeOptions } = require('./DockerComposeOptions')
+const { Compose } = require('./compose')
 
 async function start() {
   const resolver = new OptionResolver()
@@ -10,7 +10,7 @@ async function start() {
   const compose = resolver.resolveComposeCommandFlags()
   const services = resolver.resolveServices()
 
-  const options = new Docker_compose_options(files, true, compose, command)
+  const options = new DockerComposeOptions(files, true, compose, command)
 
   try {
     const result = await Compose.up(services, options)
@@ -31,7 +31,7 @@ async function stop() {
   const command = resolver.resolveComposeDownFlags()
   const compose = resolver.resolveComposeCommandFlags()
 
-  const options = new Docker_compose_options(files, true, compose, command)
+  const options = new DockerComposeOptions(files, true, compose, command)
 
   try {
     const result = await Compose.down(options)

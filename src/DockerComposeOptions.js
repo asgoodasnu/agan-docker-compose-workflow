@@ -1,4 +1,4 @@
-export class Docker_compose_options {
+export class DockerComposeOptions {
   constructor(composeFiles, log, composeOptions, commandOptions) {
     this.composeFiles = composeFiles
     this.log = log || true

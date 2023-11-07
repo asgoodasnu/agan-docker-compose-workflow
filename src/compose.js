@@ -4,7 +4,7 @@ const composeV2 = compose.v2
 export class Compose {
   /**
    * @param {array<string>} services
-   * @param {Docker_compose_options} options
+   * @param {DockerComposeOptions} options
    * @returns {Promise<IDockerComposeResult>}
    */
   static up(services, options) {
@@ -16,7 +16,7 @@ export class Compose {
   }
 
   /**
-   * @param {Docker_compose_options} options
+   * @param {DockerComposeOptions} options
    * @returns {Promise<IDockerComposeResult>}
    */
   static down(options) {
