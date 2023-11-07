@@ -1,5 +1,4 @@
-const compose = require('docker-compose')
-const composeV2 = compose.v2
+import { v2 as composeV2 } from 'docker-compose'
 
 export class Compose {
   /**
@@ -11,7 +10,7 @@ export class Compose {
     if (0 < services.length) {
       return composeV2.upMany(services, options.toObject())
     }
-    console.debug(options.toObject())
+
     return composeV2.upAll(options.toObject())
   }
 
@@ -20,6 +19,7 @@ export class Compose {
    * @returns {Promise<IDockerComposeResult>}
    */
   static down(options) {
+    console.debug(options.toObject())
     return composeV2.down(options.toObject())
   }
 }

@@ -31045,8 +31045,9 @@ __nccwpck_require__.r(__webpack_exports__);
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
 /* harmony export */   "Compose": () => (/* binding */ Compose)
 /* harmony export */ });
-const compose = __nccwpck_require__(1022)
-const composeV2 = compose.v2
+/* harmony import */ var docker_compose__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(1022);
+/* harmony import */ var docker_compose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nccwpck_require__.n(docker_compose__WEBPACK_IMPORTED_MODULE_0__);
+
 
 class Compose {
   /**
@@ -31056,10 +31057,10 @@ class Compose {
    */
   static up(services, options) {
     if (0 < services.length) {
-      return composeV2.upMany(services, options.toObject())
+      return docker_compose__WEBPACK_IMPORTED_MODULE_0__.v2.upMany(services, options.toObject())
     }
-    console.debug(options.toObject())
-    return composeV2.upAll(options.toObject())
+
+    return docker_compose__WEBPACK_IMPORTED_MODULE_0__.v2.upAll(options.toObject())
   }
 
   /**
@@ -31067,7 +31068,8 @@ class Compose {
    * @returns {Promise<IDockerComposeResult>}
    */
   static down(options) {
-    return composeV2.down(options.toObject())
+    console.debug(options.toObject())
+    return docker_compose__WEBPACK_IMPORTED_MODULE_0__.v2.down(options.toObject())
   }
 }
 
