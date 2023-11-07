@@ -26831,7 +26831,7 @@ class Compose {
     if (0 < services.length) {
       return composeV2.upMany(services, options.toObject())
     }
-    console.debug(options)
+    console.debug(options.toObject())
     return composeV2.upAll(options)
   }
 
