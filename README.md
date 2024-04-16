@@ -56,7 +56,7 @@ Allowed Options are:
 steps:
   - name: Test default Action
     id: test-default
-    uses: 'kurt-junker/agan-docker-compose-workflow@v0.1'
+    uses: 'asgoodasnu/agan-docker-compose-workflow@v0.1'
     with:
       compose-file: './docker-compose.yml'
       services: |
